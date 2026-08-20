@@ -285,18 +285,18 @@ function App() {
           </h2>
 
           <div className="mt-10 flex flex-wrap gap-5 text-sm">
-            <a href="mailto:YOUR_EMAIL" className="underline underline-offset-4">
+            <a href="mailto:eeshasutaria@gmail.com" className="underline underline-offset-4">
               Email
             </a>
             <a
-              href="YOUR_LINKEDIN"
+              href="https://www.linkedin.com/in/eesha-s-994a662a1"
               target="_blank"
               className="underline underline-offset-4"
             >
               LinkedIn
             </a>
             <a
-              href="YOUR_GITHUB"
+              href="https://github.com/esutaria"
               target="_blank"
               className="underline underline-offset-4"
             >
