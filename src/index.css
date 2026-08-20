@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #241720;
+  background: #fbf7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(105, 83, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 85% 25%, rgba(255, 107, 138, 0.09), transparent 25%),
+    #fbf7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #d9d0ff;
+  color: #241720;
+}
