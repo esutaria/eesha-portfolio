@@ -348,18 +348,7 @@ function App() {
                           {project.headline}
                         </p>
 
-                        <svg
-                          viewBox="0 0 420 30"
-                          className="absolute -bottom-3 left-0 w-full opacity-25"
-                          fill="none"
-                        >
-                          <path
-                            d="M4 18 C100 5, 190 28, 300 12 S390 10, 416 16"
-                            stroke="#8a3158"
-                            strokeWidth="1.2"
-                            strokeLinecap="round"
-                          />
-                        </svg>
+                        
                       </div>
 
                       <p className="mt-5 max-w-3xl text-lg leading-8 text-black/55">
@@ -852,90 +841,29 @@ type DanceDividerProps = {
   flip?: boolean
 }
 
-function DanceDivider({
-  pose = 1,
-  flip = false,
-}: DanceDividerProps) {
+type DanceDividerProps = {
+  number: 1 | 2 | 3 | 4
+}
+
+function DanceDivider({ number }: DanceDividerProps) {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
-      <div className="relative flex h-28 items-center justify-center">
-
-        {/* left movement trail */}
-        <motion.svg
-          viewBox="0 0 500 100"
-          className="absolute left-0 h-20 w-[43%]"
-          fill="none"
-        >
-          <motion.path
-            d="M0 68 C115 92 205 83 290 55 C360 32 420 40 500 56"
-            stroke="#8a3158"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{
-              pathLength: 1,
-              opacity: 0.42,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-          />
-        </motion.svg>
-
-        {/* actual dancer artwork */}
-        <motion.img
-          src={`/dance-divider-${pose}.png`}
-          alt=""
-          aria-hidden="true"
-          initial={{
-            opacity: 0,
-            scale: 0.9,
-            y: 5,
-          }}
-          whileInView={{
-            opacity: 0.7,
-            scale: 1,
-            y: 0,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.8,
-            delay: 0.35,
-          }}
-          className={`relative z-10 h-28 w-28 object-contain ${
-            flip ? "-scale-x-100" : ""
-          }`}
-        />
-
-        {/* right movement trail */}
-        <motion.svg
-          viewBox="0 0 500 100"
-          className="absolute right-0 h-20 w-[43%]"
-          fill="none"
-        >
-          <motion.path
-            d="M0 56 C90 32 160 38 225 58 C305 84 390 84 500 58"
-            stroke="#8a3158"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{
-              pathLength: 1,
-              opacity: 0.42,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 1.5,
-              delay: 0.55,
-              ease: "easeInOut",
-            }}
-          />
-        </motion.svg>
-
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        duration: 0.9,
+        ease: "easeOut",
+      }}
+      className="mx-auto max-w-7xl px-6 py-4 lg:px-10"
+    >
+      <img
+        src={`/dance-divider-${number}.png`}
+        alt=""
+        aria-hidden="true"
+        className="mx-auto h-auto w-full max-w-6xl object-contain"
+      />
+    </motion.div>
   )
 }
 
