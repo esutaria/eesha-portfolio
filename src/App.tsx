@@ -157,7 +157,7 @@ function App() {
             </div>
           </div>
                   
-                  <DanceDivider pose={1} />
+                  <DanceDivider number={1} />
         <section id="experience" className="px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-7xl">
 
@@ -379,7 +379,8 @@ function App() {
       </section>
 
       <section id="about" className="px-6 py-28 lg:px-10"></section>
-      <DanceDivider pose={2} flip />
+      
+      <DanceDivider number={2} />
 
       <section id="process" className="px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
@@ -404,28 +405,28 @@ function App() {
             <div className="relative">
 
               {/* vertical movement path */}
-              <svg
-  viewBox="0 0 80 520"
-  className="absolute left-0 top-0 hidden h-full w-16 sm:block"
-  fill="none"
->
-  <motion.path
-    d="M30 10
-       C58 80, 8 135, 34 200
-       S62 320, 30 390
-       S8 470, 36 510"
-    stroke="#8a3158"
-    strokeWidth="1.4"
-    strokeLinecap="round"
-    initial={{ pathLength: 0 }}
-    whileInView={{ pathLength: 1 }}
-    viewport={{ once: true }}
-    transition={{
-      duration: 2,
-      ease: "easeInOut",
-    }}
-  />
-</svg>
+                            <svg
+                viewBox="0 0 80 520"
+                className="absolute left-0 top-0 hidden h-full w-16 sm:block"
+                fill="none"
+              >
+                <motion.path
+                  d="M30 10
+                    C58 80, 8 135, 34 200
+                    S62 320, 30 390
+                    S8 470, 36 510"
+                  stroke="#8a3158"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                  }}
+                />
+              </svg>
 
               {[
                 {
@@ -494,7 +495,7 @@ function App() {
         </div>
       </section>
 
-      <DanceDivider pose={3} />
+      <DanceDivider number={3} />
 
       <section id="about" className="px-6 py-28 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr]">
@@ -578,7 +579,8 @@ function App() {
           </motion.div>
         </div>
       </section>
-
+          
+          <DanceDivider number={4} />
           <section id="contact" className="px-6 py-28 lg:px-10">
             <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#241720] px-8 py-16 text-white md:px-14 md:py-20">
               <p className="text-sm tracking-[0.2em] text-white/45">
@@ -836,10 +838,6 @@ function SkillCard({
   )
 }
 
-type DanceDividerProps = {
-  pose?: 1 | 2 | 3
-  flip?: boolean
-}
 
 type DanceDividerProps = {
   number: 1 | 2 | 3 | 4
