@@ -139,6 +139,8 @@ function App() {
               <p className="mb-3 text-sm tracking-[0.2em] text-black/45">
                 SELECTED WORK
               </p>
+              <SectionFlourish />
+
 
               <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
                 From messy problems to{" "}
@@ -158,6 +160,8 @@ function App() {
                 <p className="text-sm tracking-[0.2em] text-black/45">
                   EXPERIENCE
                 </p>
+                <SectionFlourish />
+              
 
                 <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
                   Building beyond the{" "}
@@ -333,9 +337,24 @@ function App() {
                         {project.title}
                       </h3>
 
-                      <p className="mt-5 max-w-3xl font-serif text-2xl italic leading-snug text-[#8a3158] sm:text-3xl">
-                        {project.headline}
-                      </p>
+                      <div className="relative inline-block">
+                        <p className="relative z-10 font-serif text-2xl italic text-[#8a3158]">
+                          {project.headline}
+                        </p>
+
+                        <svg
+                          viewBox="0 0 420 30"
+                          className="absolute -bottom-3 left-0 w-full opacity-25"
+                          fill="none"
+                        >
+                          <path
+                            d="M4 18 C100 5, 190 28, 300 12 S390 10, 416 16"
+                            stroke="#8a3158"
+                            strokeWidth="1.2"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </div>
 
                       <p className="mt-5 max-w-3xl text-lg leading-8 text-black/55">
                         {project.description}
@@ -376,6 +395,8 @@ function App() {
               <p className="text-sm tracking-[0.2em] text-black/45">
                 HOW I BUILD
               </p>
+              <SectionFlourish />
+
 
               <h2 className="mt-5 max-w-xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
                 I like problems where the answer{" "}
@@ -388,7 +409,28 @@ function App() {
             <div className="relative">
 
               {/* vertical movement path */}
-              <div className="absolute bottom-0 left-[19px] top-0 hidden w-px bg-black/10 sm:block" />
+              <svg
+  viewBox="0 0 80 520"
+  className="absolute left-0 top-0 hidden h-full w-16 sm:block"
+  fill="none"
+>
+  <motion.path
+    d="M30 10
+       C58 80, 8 135, 34 200
+       S62 320, 30 390
+       S8 470, 36 510"
+    stroke="#8a3158"
+    strokeWidth="1.4"
+    strokeLinecap="round"
+    initial={{ pathLength: 0 }}
+    whileInView={{ pathLength: 1 }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 2,
+      ease: "easeInOut",
+    }}
+  />
+</svg>
 
               {[
                 {
@@ -470,6 +512,8 @@ function App() {
             <p className="text-sm tracking-[0.2em] text-black/45">
               A LITTLE MORE HUMAN
             </p>
+            <SectionFlourish />
+
 
             <h2 className="mt-5 font-serif text-5xl italic tracking-[-0.04em] text-[#8a3158] sm:text-6xl">
               Engineer.
@@ -798,35 +842,79 @@ function SkillCard({
 }
 function DanceDivider() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-4 lg:px-10">
+    <div className="mx-auto max-w-7xl px-6 py-6 lg:px-10">
       <svg
-        viewBox="0 0 1200 80"
-        className="h-16 w-full overflow-visible"
+        viewBox="0 0 1200 110"
+        className="h-20 w-full overflow-visible"
         fill="none"
       >
         <motion.path
-          d="M0 40 C180 40, 180 12, 350 40 S620 68, 800 40 S1040 12, 1200 40"
+          d="M0 60
+             C120 20, 210 95, 340 55
+             S560 15, 690 58
+             S930 100, 1200 45"
           stroke="#8a3158"
-          strokeWidth="1.5"
+          strokeWidth="1.4"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 0.35 }}
+          whileInView={{ pathLength: 1, opacity: 0.32 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.8, ease: "easeInOut" }}
+          transition={{
+            duration: 2.2,
+            ease: "easeInOut",
+          }}
+        />
+
+        <motion.path
+          d="M200 68
+             C300 100, 390 28, 500 62
+             S740 95, 850 50"
+          stroke="#6b5cff"
+          strokeWidth="0.8"
+          strokeLinecap="round"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.16 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 2.4,
+            delay: 0.2,
+            ease: "easeInOut",
+          }}
         />
 
         <motion.circle
-          cx="600"
-          cy="40"
+          cx="690"
+          cy="58"
           r="4"
           fill="#8a3158"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1.1 }}
         />
       </svg>
     </div>
+  )
+}
+
+function SectionFlourish() {
+  return (
+    <svg
+      viewBox="0 0 120 28"
+      className="ml-3 inline-block h-6 w-24 align-middle"
+      fill="none"
+    >
+      <motion.path
+        d="M2 18 C28 2, 54 28, 82 10 S108 7, 118 15"
+        stroke="#8a3158"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+      />
+    </svg>
   )
 }
 
