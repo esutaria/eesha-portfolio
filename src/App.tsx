@@ -840,57 +840,103 @@ function SkillCard({
     </motion.div>
   )
 }
+
 function DanceDivider() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-6 lg:px-10">
+    <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
       <svg
-        viewBox="0 0 1200 110"
-        className="h-20 w-full overflow-visible"
+        viewBox="0 0 1200 170"
+        className="h-28 w-full overflow-visible"
         fill="none"
+        aria-hidden="true"
       >
+        {/* Left movement trail */}
         <motion.path
-          d="M0 60
-             C120 20, 210 95, 340 55
-             S560 15, 690 58
-             S930 100, 1200 45"
+          d="
+            M0 125
+            C110 155, 210 145, 285 105
+            C345 72, 370 55, 430 75
+          "
           stroke="#8a3158"
-          strokeWidth="1.4"
+          strokeWidth="2"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 0.32 }}
+          whileInView={{ pathLength: 1, opacity: 0.55 }}
           viewport={{ once: true }}
           transition={{
-            duration: 2.2,
+            duration: 1.5,
             ease: "easeInOut",
           }}
         />
 
+        {/* Dancer */}
+        <motion.g
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.7 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          stroke="#8a3158"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* head */}
+          <circle cx="585" cy="32" r="15" />
+
+          {/* bun / head ornament */}
+          <path d="M574 19 C579 8, 593 8, 598 19" />
+
+          {/* torso */}
+          <path d="M581 48 C570 64, 566 82, 573 100" />
+          <path d="M590 48 C603 64, 606 81, 598 100" />
+
+          {/* raised left arm */}
+          <path d="M577 57 C545 51, 522 36, 500 18" />
+          <path d="M500 18 C494 12, 489 14, 488 20" />
+
+          {/* raised right arm */}
+          <path d="M596 56 C620 41, 633 22, 637 4" />
+          <path d="M637 4 C643 10, 647 14, 653 12" />
+
+          {/* waist */}
+          <path d="M573 100 C582 106, 590 106, 599 100" />
+
+          {/* bent leg */}
+          <path d="M581 104 C560 117, 544 124, 531 113" />
+          <path d="M531 113 C519 102, 514 92, 505 88" />
+
+          {/* standing leg */}
+          <path d="M591 105 C600 122, 605 140, 604 157" />
+
+          {/* foot */}
+          <path d="M604 157 C615 160, 624 159, 630 154" />
+
+          {/* costume fan suggestion */}
+          <path d="M575 102 C560 114, 555 127, 557 143" />
+          <path d="M599 102 C611 114, 614 128, 610 143" />
+          <path d="M579 105 L571 141" />
+          <path d="M588 106 L586 145" />
+          <path d="M596 105 L602 140" />
+        </motion.g>
+
+        {/* Right movement trail */}
         <motion.path
-          d="M200 68
-             C300 100, 390 28, 500 62
-             S740 95, 850 50"
-          stroke="#6b5cff"
-          strokeWidth="0.8"
+          d="
+            M630 115
+            C710 72, 760 71, 820 105
+            C900 150, 1000 150, 1200 108
+          "
+          stroke="#8a3158"
+          strokeWidth="2"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 0.16 }}
+          whileInView={{ pathLength: 1, opacity: 0.55 }}
           viewport={{ once: true }}
           transition={{
-            duration: 2.4,
-            delay: 0.2,
+            duration: 1.6,
+            delay: 0.7,
             ease: "easeInOut",
           }}
-        />
-
-        <motion.circle
-          cx="690"
-          cy="58"
-          r="4"
-          fill="#8a3158"
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.1 }}
         />
       </svg>
     </div>
@@ -900,19 +946,33 @@ function DanceDivider() {
 function SectionFlourish() {
   return (
     <svg
-      viewBox="0 0 120 28"
-      className="ml-3 inline-block h-6 w-24 align-middle"
+      viewBox="0 0 150 44"
+      className="ml-3 inline-block h-8 w-28"
       fill="none"
+      aria-hidden="true"
     >
       <motion.path
-        d="M2 18 C28 2, 54 28, 82 10 S108 7, 118 15"
+        d="
+          M3 30
+          C32 7, 56 39, 82 21
+          C95 12, 102 9, 113 12
+          M113 12
+          C120 15, 125 20, 129 26
+          M113 12
+          C119 6, 124 4, 128 7
+          M113 12
+          C112 5, 115 1, 119 2
+        "
         stroke="#8a3158"
-        strokeWidth="1.2"
+        strokeWidth="1.6"
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
+        transition={{
+          duration: 1.3,
+          ease: "easeInOut",
+        }}
       />
     </svg>
   )
