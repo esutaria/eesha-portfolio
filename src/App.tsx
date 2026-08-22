@@ -4,7 +4,7 @@ import { useState } from "react"
 const projects = [
   {
     number: "01",
-    label: "PERCEPTION",
+    label: "ACCESSIBILITY & AI",
     title: "S.A.R.A.H.",
     headline: "Helping people understand an environment they can't see.",
     description:
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     number: "02",
-    label: "SIGNAL",
+    label: "PRODUCT & AI",
     title: "SenseAI",
     headline: "Turning customer noise into product signal.",
     description:
@@ -28,7 +28,7 @@ const projects = [
   },
   {
     number: "03",
-    label: "DECISION",
+    label: "HEALTHCARE & ML",
     title: "Care Navigation",
     headline: "Helping people understand the right next step in care.",
     description:
@@ -139,11 +139,131 @@ function App() {
               <p className="mb-3 text-sm tracking-[0.2em] text-black/45">
                 SELECTED WORK
               </p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Perception → Signal → Decision
+
+              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
+                From messy problems to{" "}
+                <span className="font-serif italic text-[#8a3158]">
+                  working products.
+                </span>
               </h2>
             </div>
           </div>
+                  <DanceDivider />
+
+        <section id="experience" className="px-6 py-24 lg:px-10">
+          <div className="mx-auto max-w-7xl">
+
+            <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
+              <div>
+                <p className="text-sm tracking-[0.2em] text-black/45">
+                  EXPERIENCE
+                </p>
+
+                <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                  Building beyond the{" "}
+                  <span className="font-serif italic text-[#8a3158]">
+                    classroom.
+                  </span>
+                </h2>
+
+                <p className="mt-6 max-w-md text-lg leading-8 text-black/50">
+                  Software, AI, healthcare, and hardware — across startups,
+                  public systems, and engineering teams.
+                </p>
+              </div>
+
+              <div>
+                {[
+                  {
+                    year: "2026",
+                    company: "Western Cape Department of Health & Wellness",
+                    role: "Service Design & Digital Health Product Intern",
+                    detail:
+                      "Built digital tools for clinical workflows and translated stakeholder needs into systems used in public healthcare environments.",
+                    tags: ["Digital Health", "Product", "Power Apps"],
+                  },
+                  {
+                    year: "2026",
+                    company: "PlayMaker",
+                    role: "Data & Artificial Intelligence Intern",
+                    detail:
+                      "Built an AI-powered pricing pipeline using Gemini, FastAPI, and Firebase to automate recommendations across historical business data.",
+                    tags: ["AI", "FastAPI", "Firebase"],
+                  },
+                  {
+                    year: "2025",
+                    company: "Jamf",
+                    role: "Software Engineering Intern",
+                    detail:
+                      "Shipped backend and API security features in Kotlin within a production Agile engineering environment.",
+                    tags: ["Kotlin", "AWS", "APIs"],
+                  },
+                  {
+                    year: "2024",
+                    company: "Axon",
+                    role: "Firmware Automation Intern",
+                    detail:
+                      "Built internal automation tooling inside a firmware and hardware engineering environment.",
+                    tags: ["Python", "Automation", "Hardware"],
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.company}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.08,
+                    }}
+                    className="group relative grid gap-5 border-t border-black/10 py-8 md:grid-cols-[90px_1fr]"
+                  >
+                    {/* movement marker */}
+                    <div className="relative">
+                      <p className="text-sm text-black/35">
+                        {item.year}
+                      </p>
+
+                      <motion.div
+                        className="absolute left-[55px] top-[8px] hidden h-2 w-2 rounded-full bg-[#8a3158] md:block"
+                        whileHover={{ scale: 1.8 }}
+                      />
+                    </div>
+
+                    <div>
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                          <h3 className="text-xl font-medium">
+                            {item.company}
+                          </h3>
+
+                          <p className="mt-1 font-serif text-lg italic text-[#8a3158]">
+                            {item.role}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="mt-4 max-w-2xl leading-7 text-black/50">
+                        {item.detail}
+                      </p>
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full bg-[#f3ede7] px-3 py-1 text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
          <div className="space-y-10">
             {projects.map((project, index) => (
@@ -245,73 +365,236 @@ function App() {
       </section>
 
       <section id="about" className="px-6 py-28 lg:px-10"></section>
+      <DanceDivider />
+
+      <section id="process" className="px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+
+          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+
+            <div>
+              <p className="text-sm tracking-[0.2em] text-black/45">
+                HOW I BUILD
+              </p>
+
+              <h2 className="mt-5 max-w-xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                I like problems where the answer{" "}
+                <span className="font-serif italic text-[#8a3158]">
+                  isn't obvious.
+                </span>
+              </h2>
+            </div>
+
+            <div className="relative">
+
+              {/* vertical movement path */}
+              <div className="absolute bottom-0 left-[19px] top-0 hidden w-px bg-black/10 sm:block" />
+
+              {[
+                {
+                  number: "01",
+                  title: "Start with people",
+                  text:
+                    "Understand the users, workflows, incentives, context, and constraints before deciding what to build.",
+                },
+                {
+                  number: "02",
+                  title: "Make ambiguity concrete",
+                  text:
+                    "Turn messy problems into requirements, tradeoffs, priorities, and a plan that teams can act on.",
+                },
+                {
+                  number: "03",
+                  title: "Build enough to learn",
+                  text:
+                    "Prototype quickly, connect the full system, and test the assumptions that actually matter.",
+                },
+                {
+                  number: "04",
+                  title: "Let evidence change the answer",
+                  text:
+                    "Measure what works, understand what doesn't, and iterate instead of defending the first idea.",
+                },
+              ].map((step, index) => (
+                <motion.div
+                  key={step.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.1,
+                  }}
+                  className="relative grid gap-5 border-t border-black/10 py-7 sm:grid-cols-[60px_1fr]"
+                >
+                  <div className="relative z-10">
+                    <motion.div
+                      whileInView={{
+                        backgroundColor: "#8a3158",
+                        color: "#ffffff",
+                      }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.12 }}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-[#fbf7f2] text-xs"
+                    >
+                      {step.number}
+                    </motion.div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-medium">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-2 max-w-2xl leading-7 text-black/50">
+                      {step.text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <DanceDivider />
+
       <section id="about" className="px-6 py-28 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2">
-          <div>
-            <p className="mb-4 text-sm tracking-[0.2em] text-black/45">
-              HOW I BUILD
+        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm tracking-[0.2em] text-black/45">
+              A LITTLE MORE HUMAN
             </p>
-            <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-              Technology starts with understanding the problem.
+
+            <h2 className="mt-5 font-serif text-5xl italic tracking-[-0.04em] text-[#8a3158] sm:text-6xl">
+              Engineer.
+              <br />
+              Builder.
+              <br />
+              Storyteller.
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-8 sm:grid-cols-2">
-            {[
-              ["01", "Understand", "Start with the user, context, and constraints."],
-              ["02", "Define", "Turn ambiguity into a clear problem and requirements."],
-              ["03", "Build", "Design and engineer systems that actually work."],
-              ["04", "Measure", "Use evidence to understand what should improve next."],
-            ].map(([number, title, text]) => (
-              <div key={title} className="border-t border-black/15 pt-5">
-                <p className="text-xs text-black/35">{number}</p>
-                <h3 className="mt-3 text-xl font-medium">{title}</h3>
-                <p className="mt-2 leading-7 text-black/55">{text}</p>
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <p className="text-xl leading-9 text-black/65">
+              I study Electrical & Computer Engineering at Princeton and love
+              building technology where software has to understand people,
+              environments, or messy real-world systems.
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-black/55">
+              Some of how I think about building comes from somewhere very
+              different: more than a decade of Bharatanatyam. Dance taught me
+              precision, storytelling, iteration, and how tiny details can
+              completely change an experience.
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-black/55">
+              I bring that same curiosity to technology — especially AI,
+              healthcare, accessibility, and products designed around real
+              human problems.
+            </p>
+
+            <div className="mt-12">
+              <p className="text-xs tracking-[0.2em] text-black/35">
+                CURRENTLY
+              </p>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  ["building", "SenseAI"],
+                  ["learning", "ML systems"],
+                  ["dancing", "Bharatanatyam"],
+                  ["craving", "tiramisu"],
+                ].map(([label, value], index) => (
+                  <motion.div
+                    key={label}
+                    whileHover={{
+                      y: -4,
+                      rotate: index % 2 === 0 ? -0.5 : 0.5,
+                    }}
+                    className="rounded-2xl border border-black/10 bg-white/55 px-5 py-4"
+                  >
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-black/35">
+                      {label}
+                    </p>
+
+                    <p className="mt-1 font-serif text-xl italic text-[#8a3158]">
+                      {value}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      <section id="contact" className="px-6 py-28 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#241720] px-8 py-16 text-white md:px-14 md:py-20">
-          <p className="text-sm tracking-[0.2em] text-white/50">
-            LET’S CONNECT
-          </p>
+          <section id="contact" className="px-6 py-28 lg:px-10">
+            <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#241720] px-8 py-16 text-white md:px-14 md:py-20">
+              <p className="text-sm tracking-[0.2em] text-white/45">
+                LET’S CONNECT
+              </p>
 
-          <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
-            I’m always interested in thoughtful technology and ambitious
-            problems.
-          </h2>
+              <h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
+                I’m always looking for problems worth{" "}
+                <span className="font-serif italic text-[#dca6bf]">
+                  thinking deeply about.
+                </span>
+              </h2>
 
-          <div className="mt-10 flex flex-wrap gap-5 text-sm">
-            <a href="mailto:eeshasutaria@gmail.com" className="underline underline-offset-4">
-              Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/eesha-s-994a662a1"
-              target="_blank"
-              className="underline underline-offset-4"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/esutaria"
-              target="_blank"
-              className="underline underline-offset-4"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </section>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/55">
+                Software, AI, healthcare, product ideas, research — or something
+                completely unexpected.
+              </p>
 
-      <footer className="px-6 py-10 text-center text-sm text-black/40">
-        Designed & built by Eesha Sutaria.
-      </footer>
-    </main>
-  )
-}
+              <div className="mt-10 flex flex-wrap gap-5 text-sm">
+                <a href="mailto:eeshasutaria@gmail.com" className="underline underline-offset-4">
+                  Email
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/eesha-s-994a662a1"
+                  target="_blank"
+                  className="underline underline-offset-4"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/esutaria"
+                  target="_blank"
+                  className="underline underline-offset-4"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 transition hover:text-white/60"
+                >
+                  Resume ↗
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <footer className="px-6 py-10 text-center text-sm text-black/40">
+            Designed, built, and choreographed by Eesha Sutaria.
+          </footer>
+        </main>
+      )
+    }
 
 function SignalGraphic() {
   const [activeStep, setActiveStep] = useState(0)
@@ -322,7 +605,7 @@ function SignalGraphic() {
       detail: "LLMs · Multimodal AI",
     },
     {
-      title: "Full-Stack Engineering",
+      title: "Full-Stack",
       detail: "React · APIs · Backend",
     },
     {
@@ -471,7 +754,7 @@ function SkillCard({
           : 0,
 
         scale: active ? 1.055 : 1,
-        opacity: active ? 1 : 0.32,
+        opacity: active ? 1 : 0.48,
       }}
       transition={{
         duration: 0.45,
@@ -487,7 +770,7 @@ function SkillCard({
       <motion.div
         animate={{
           scale: active ? 1.65 : 1,
-          opacity: active ? 1 : 0.2,
+          opacity: active ? 1 : 0.48,
         }}
         transition={{ duration: 0.45 }}
         className={`absolute top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#8a3158] ${
@@ -511,6 +794,39 @@ function SkillCard({
         {detail}
       </p>
     </motion.div>
+  )
+}
+function DanceDivider() {
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-4 lg:px-10">
+      <svg
+        viewBox="0 0 1200 80"
+        className="h-16 w-full overflow-visible"
+        fill="none"
+      >
+        <motion.path
+          d="M0 40 C180 40, 180 12, 350 40 S620 68, 800 40 S1040 12, 1200 40"
+          stroke="#8a3158"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.35 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8, ease: "easeInOut" }}
+        />
+
+        <motion.circle
+          cx="600"
+          cy="40"
+          r="4"
+          fill="#8a3158"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+        />
+      </svg>
+    </div>
   )
 }
 
