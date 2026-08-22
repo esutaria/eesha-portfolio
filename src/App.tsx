@@ -12,7 +12,8 @@ const projects = [
     tags: ["Computer Vision", "Gemini", "Python", "Accessibility"],
     status: "Completed",
     image: "/sarah-preview.png",
-    link: "/sarah",
+    link: "https://github.com/esutaria/SARAH",
+    demo: "https://youtu.be/WMObGMByjl4",
   },
   {
     number: "02",
@@ -25,6 +26,7 @@ const projects = [
     status: "Building",
     image: null,
     link: "#",
+    demo: null,
   },
   {
     number: "03",
@@ -37,15 +39,82 @@ const projects = [
     status: "Exploring",
     image: null,
     link: "#",
+    demo: null,
+  },
+]
+
+const experience = [
+  {
+    year: "2026",
+    company: "Western Cape Department of Health & Wellness",
+    role: "Service Design & Digital Health Product Intern",
+    detail:
+      "Built digital tools for clinical workflows and translated stakeholder needs into systems used in public healthcare environments.",
+    tags: ["Digital Health", "Product", "Power Apps"],
+  },
+  {
+    year: "2026",
+    company: "PlayMaker",
+    role: "Data & Artificial Intelligence Intern",
+    detail:
+      "Built an AI-powered pricing pipeline using Gemini, FastAPI, and Firebase to automate recommendations across historical business data.",
+    tags: ["AI", "FastAPI", "Firebase"],
+  },
+  {
+    year: "2025",
+    company: "Jamf",
+    role: "Software Engineering Intern",
+    detail:
+      "Shipped backend and API security features in Kotlin within a production Agile engineering environment.",
+    tags: ["Kotlin", "AWS", "APIs"],
+  },
+  {
+    year: "2024",
+    company: "Axon",
+    role: "Firmware Automation Intern",
+    detail:
+      "Built internal automation tooling inside a firmware and hardware engineering environment.",
+    tags: ["Python", "Automation", "Hardware"],
+  },
+]
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Start with people",
+    text:
+      "Understand the users, workflows, incentives, context, and constraints before deciding what to build.",
+  },
+  {
+    number: "02",
+    title: "Make ambiguity concrete",
+    text:
+      "Turn messy problems into requirements, tradeoffs, priorities, and a plan that teams can act on.",
+  },
+  {
+    number: "03",
+    title: "Build enough to learn",
+    text:
+      "Prototype quickly, connect the full system, and test the assumptions that actually matter.",
+  },
+  {
+    number: "04",
+    title: "Let evidence change the answer",
+    text:
+      "Measure what works, understand what doesn't, and iterate instead of defending the first idea.",
   },
 ]
 
 function App() {
   return (
     <main className="min-h-screen text-[#241720]">
+      {/* NAV */}
       <nav className="fixed top-0 z-50 w-full border-b border-black/5 bg-[#fbf7f2]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a href="#top" className="text-sm font-semibold tracking-[0.18em]">
+          <a
+            href="#top"
+            className="text-sm font-semibold tracking-[0.18em]"
+          >
             EESHA SUTARIA
           </a>
 
@@ -69,6 +138,7 @@ function App() {
         </div>
       </nav>
 
+      {/* HERO */}
       <section
         id="top"
         className="relative flex min-h-screen items-center overflow-hidden px-6 pt-28 lg:px-10"
@@ -81,7 +151,7 @@ function App() {
               transition={{ duration: 0.6 }}
               className="mb-6 text-sm font-medium uppercase tracking-[0.22em] text-[#6b5cff]"
             >
-              PRINCETON Electrical & Computer Engineering · SOFTWARE · AI · PRODUCT
+              PRINCETON ECE · SOFTWARE · AI · PRODUCT
             </motion.p>
 
             <motion.h1
@@ -102,14 +172,14 @@ function App() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="mt-8 max-w-2xl text-lg leading-8 text-black/60"
             >
-              I’m Eesha — an engineer and product builder working across software,
-              AI, healthcare, accessibility, and intelligent systems.
+              I’m Eesha — an engineer and product builder working across
+              software, AI, healthcare, accessibility, and intelligent
+              systems.
             </motion.p>
 
             <p className="mt-4 font-serif text-lg italic text-[#8a3158]/75">
               from perception to decisions.
             </p>
-
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -127,6 +197,7 @@ function App() {
               <a
                 href="/resume.pdf"
                 target="_blank"
+                rel="noreferrer"
                 className="rounded-full border border-black/15 px-6 py-3 text-sm font-medium transition hover:bg-white"
               >
                 Resume ↗
@@ -138,172 +209,55 @@ function App() {
         </div>
       </section>
 
+      {/* WORK */}
       <section id="work" className="px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-14 flex items-end justify-between gap-6">
-            <div>
-              <p className="mb-3 text-sm tracking-[0.2em] text-black/45">
-                SELECTED WORK
-              </p>
-              <SectionFlourish />
+          <div className="mb-14">
+            <SectionLabel>SELECTED WORK</SectionLabel>
 
-
-              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
-                From messy problems to{" "}
-                <span className="font-serif italic text-[#8a3158]">
-                  working products.
-                </span>
-              </h2>
-            </div>
+            <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
+              From messy problems to{" "}
+              <span className="font-serif italic text-[#8a3158]">
+                working products.
+              </span>
+            </h2>
           </div>
-                  
-                  <DanceDivider number={1} />
-        <section id="experience" className="px-6 py-24 lg:px-10">
-          <div className="mx-auto max-w-7xl">
 
-            <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
-              <div>
-                <p className="text-sm tracking-[0.2em] text-black/45">
-                  EXPERIENCE
-                </p>
-                <SectionFlourish />
-              
-
-                <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                  Building beyond the{" "}
-                  <span className="font-serif italic text-[#8a3158]">
-                    classroom.
-                  </span>
-                </h2>
-
-                <p className="mt-6 max-w-md text-lg leading-8 text-black/50">
-                  Software, AI, healthcare, and hardware — across startups,
-                  public systems, and engineering teams.
-                </p>
-              </div>
-
-              <div>
-                {[
-                  {
-                    year: "2026",
-                    company: "Western Cape Department of Health & Wellness",
-                    role: "Service Design & Digital Health Product Intern",
-                    detail:
-                      "Built digital tools for clinical workflows and translated stakeholder needs into systems used in public healthcare environments.",
-                    tags: ["Digital Health", "Product", "Power Apps"],
-                  },
-                  {
-                    year: "2026",
-                    company: "PlayMaker",
-                    role: "Data & Artificial Intelligence Intern",
-                    detail:
-                      "Built an AI-powered pricing pipeline using Gemini, FastAPI, and Firebase to automate recommendations across historical business data.",
-                    tags: ["AI", "FastAPI", "Firebase"],
-                  },
-                  {
-                    year: "2025",
-                    company: "Jamf",
-                    role: "Software Engineering Intern",
-                    detail:
-                      "Shipped backend and API security features in Kotlin within a production Agile engineering environment.",
-                    tags: ["Kotlin", "AWS", "APIs"],
-                  },
-                  {
-                    year: "2024",
-                    company: "Axon",
-                    role: "Firmware Automation Intern",
-                    detail:
-                      "Built internal automation tooling inside a firmware and hardware engineering environment.",
-                    tags: ["Python", "Automation", "Hardware"],
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.company}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.08,
-                    }}
-                    className="group relative grid gap-5 border-t border-black/10 py-8 md:grid-cols-[90px_1fr]"
-                  >
-                    {/* movement marker */}
-                    <div className="relative">
-                      <p className="text-sm text-black/35">
-                        {item.year}
-                      </p>
-
-                      <motion.div
-                        className="absolute left-[55px] top-[8px] hidden h-2 w-2 rounded-full bg-[#8a3158] md:block"
-                        whileHover={{ scale: 1.8 }}
-                      />
-                    </div>
-
-                    <div>
-                      <div className="flex flex-wrap items-start justify-between gap-3">
-                        <div>
-                          <h3 className="text-xl font-medium">
-                            {item.company}
-                          </h3>
-
-                          <p className="mt-1 font-serif text-lg italic text-[#8a3158]">
-                            {item.role}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="mt-4 max-w-2xl leading-7 text-black/50">
-                        {item.detail}
-                      </p>
-
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {item.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full bg-[#f3ede7] px-3 py-1 text-xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-         <div className="space-y-10">
+          <div className="space-y-10">
             {projects.map((project, index) => (
-              <motion.a
+              <motion.div
                 key={project.title}
-                href={project.link}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                className="group block overflow-hidden rounded-[2rem] border border-black/10 bg-white/70 transition duration-500 hover:-translate-y-1 hover:bg-white"
+                transition={{
+                  delay: index * 0.08,
+                  duration: 0.6,
+                }}
+                className="group overflow-hidden rounded-[2rem] border border-black/10 bg-white/70 transition duration-500 hover:-translate-y-1 hover:bg-white"
               >
                 <div
                   className={`grid ${
-                    project.image ? "lg:grid-cols-[0.9fr_1.1fr]" : ""
+                    project.image
+                      ? "lg:grid-cols-[0.9fr_1.1fr]"
+                      : ""
                   }`}
                 >
                   {project.image && (
-                    <div className="relative min-h-[360px] overflow-hidden bg-black">
+                    <div className="relative min-h-[360px] overflow-hidden bg-[#2b1430]">
                       <img
                         src={project.image}
                         alt={`${project.title} prototype`}
-                        className="h-full w-full object-contain bg-[#2b1430] p-4 transition duration-700 group-hover:scale-[1.015]"
+                        className="h-full w-full object-contain p-4 transition duration-700 group-hover:scale-[1.015]"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
                       <motion.div
                         className="absolute left-0 top-0 h-[2px] w-full bg-[#a993ff]/70"
-                        animate={{ top: ["0%", "100%", "0%"] }}
+                        animate={{
+                          top: ["0%", "100%", "0%"],
+                        }}
                         transition={{
                           duration: 5,
                           repeat: Infinity,
@@ -311,15 +265,16 @@ function App() {
                         }}
                       />
 
-                      <a
-                        href="https://youtu.be/WMObGMByjl4"
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="absolute bottom-6 left-6 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#241720] transition hover:scale-105"
-                      >
-                        ▶ Watch demo
-                      </a>
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute bottom-6 left-6 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#241720] transition hover:scale-105"
+                        >
+                          ▶ Watch demo
+                        </a>
+                      )}
                     </div>
                   )}
 
@@ -327,7 +282,9 @@ function App() {
                     <div>
                       <div className="flex items-start justify-between gap-6">
                         <div>
-                          <p className="text-xs text-black/35">{project.number}</p>
+                          <p className="text-xs text-black/35">
+                            {project.number}
+                          </p>
 
                           <p className="mt-2 text-sm font-medium tracking-[0.18em] text-[#6b5cff]">
                             {project.label}
@@ -343,13 +300,9 @@ function App() {
                         {project.title}
                       </h3>
 
-                      <div className="relative inline-block">
-                        <p className="relative z-10 font-serif text-2xl italic text-[#8a3158]">
-                          {project.headline}
-                        </p>
-
-                        
-                      </div>
+                      <p className="mt-4 font-serif text-2xl italic leading-snug text-[#8a3158]">
+                        {project.headline}
+                      </p>
 
                       <p className="mt-5 max-w-3xl text-lg leading-8 text-black/55">
                         {project.description}
@@ -367,32 +320,119 @@ function App() {
                       </div>
                     </div>
 
-                    <p className="mt-10 text-sm font-medium transition duration-300 group-hover:translate-x-1">
-                      Explore project →
-                    </p>
+                    {project.link === "#" ? (
+                      <p className="mt-10 text-sm font-medium text-black/40">
+                        Case study coming soon
+                      </p>
+                    ) : (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-10 inline-block text-sm font-medium transition hover:translate-x-1"
+                      >
+                        Explore project →
+                      </a>
+                    )}
                   </div>
                 </div>
-                </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="px-6 py-28 lg:px-10"></section>
-      
-      <DanceDivider number={2} />
+      <DanceDivider number={1} />
 
-      <section id="process" className="px-6 py-28 lg:px-10">
+      {/* EXPERIENCE */}
+      <section id="experience" className="px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
+            <div>
+              <SectionLabel>EXPERIENCE</SectionLabel>
 
-          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+              <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Building beyond the{" "}
+                <span className="font-serif italic text-[#8a3158]">
+                  classroom.
+                </span>
+              </h2>
+
+              <p className="mt-6 max-w-md text-lg leading-8 text-black/50">
+                Software, AI, healthcare, and hardware — across startups,
+                public systems, and engineering teams.
+              </p>
+            </div>
 
             <div>
-              <p className="text-sm tracking-[0.2em] text-black/45">
-                HOW I BUILD
-              </p>
-              <SectionFlourish />
+              {experience.map((item, index) => (
+                <motion.div
+                  key={item.company}
+                  initial={{
+                    opacity: 0,
+                    x: 25,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.3,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.08,
+                  }}
+                  className="grid gap-5 border-t border-black/10 py-8 md:grid-cols-[90px_1fr]"
+                >
+                  <div className="flex items-start gap-3">
+                    <p className="text-sm text-black/35">
+                      {item.year}
+                    </p>
 
+                    <div className="mt-2 h-2 w-2 rounded-full bg-[#8a3158]" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-medium">
+                      {item.company}
+                    </h3>
+
+                    <p className="mt-1 font-serif text-lg italic text-[#8a3158]">
+                      {item.role}
+                    </p>
+
+                    <p className="mt-4 max-w-2xl leading-7 text-black/50">
+                      {item.detail}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-[#f3ede7] px-3 py-1 text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <DanceDivider number={2} />
+
+      {/* PROCESS */}
+      <section id="process" className="px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <SectionLabel>HOW I BUILD</SectionLabel>
 
               <h2 className="mt-5 max-w-xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
                 I like problems where the answer{" "}
@@ -403,62 +443,23 @@ function App() {
             </div>
 
             <div className="relative">
+              <div className="absolute bottom-8 left-5 top-8 hidden w-px bg-[#8a3158]/15 sm:block" />
 
-              {/* vertical movement path */}
-                            <svg
-                viewBox="0 0 80 520"
-                className="absolute left-0 top-0 hidden h-full w-16 sm:block"
-                fill="none"
-              >
-                <motion.path
-                  d="M30 10
-                    C58 80, 8 135, 34 200
-                    S62 320, 30 390
-                    S8 470, 36 510"
-                  stroke="#8a3158"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                  }}
-                />
-              </svg>
-
-              {[
-                {
-                  number: "01",
-                  title: "Start with people",
-                  text:
-                    "Understand the users, workflows, incentives, context, and constraints before deciding what to build.",
-                },
-                {
-                  number: "02",
-                  title: "Make ambiguity concrete",
-                  text:
-                    "Turn messy problems into requirements, tradeoffs, priorities, and a plan that teams can act on.",
-                },
-                {
-                  number: "03",
-                  title: "Build enough to learn",
-                  text:
-                    "Prototype quickly, connect the full system, and test the assumptions that actually matter.",
-                },
-                {
-                  number: "04",
-                  title: "Let evidence change the answer",
-                  text:
-                    "Measure what works, understand what doesn't, and iterate instead of defending the first idea.",
-                },
-              ].map((step, index) => (
+              {processSteps.map((step, index) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
+                  initial={{
+                    opacity: 0,
+                    y: 25,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.5,
+                  }}
                   transition={{
                     duration: 0.55,
                     delay: index * 0.1,
@@ -472,7 +473,9 @@ function App() {
                         color: "#ffffff",
                       }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.12 }}
+                      transition={{
+                        delay: index * 0.12,
+                      }}
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-[#fbf7f2] text-xs"
                     >
                       {step.number}
@@ -497,19 +500,21 @@ function App() {
 
       <DanceDivider number={3} />
 
+      {/* ABOUT */}
       <section id="about" className="px-6 py-28 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr]">
-
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{
+              opacity: 0,
+              x: -25,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-[0.2em] text-black/45">
-              A LITTLE MORE HUMAN
-            </p>
-            <SectionFlourish />
-
+            <SectionLabel>A LITTLE MORE HUMAN</SectionLabel>
 
             <h2 className="mt-5 font-serif text-5xl italic tracking-[-0.04em] text-[#8a3158] sm:text-6xl">
               Engineer.
@@ -521,22 +526,28 @@ function App() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
             viewport={{ once: true }}
             className="max-w-2xl"
           >
             <p className="text-xl leading-9 text-black/65">
-              I study Electrical & Computer Engineering at Princeton and love
-              building technology where software has to understand people,
-              environments, or messy real-world systems.
+              I study Electrical & Computer Engineering at Princeton and
+              love building technology where software has to understand
+              people, environments, or messy real-world systems.
             </p>
 
             <p className="mt-6 text-lg leading-8 text-black/55">
               Some of how I think about building comes from somewhere very
-              different: more than a decade of Bharatanatyam. Dance taught me
-              precision, storytelling, iteration, and how tiny details can
-              completely change an experience.
+              different: more than a decade of Bharatanatyam. Dance taught
+              me precision, storytelling, iteration, and how tiny details
+              can completely change an experience.
             </p>
 
             <p className="mt-6 text-lg leading-8 text-black/55">
@@ -561,7 +572,10 @@ function App() {
                     key={label}
                     whileHover={{
                       y: -4,
-                      rotate: index % 2 === 0 ? -0.5 : 0.5,
+                      rotate:
+                        index % 2 === 0
+                          ? -0.5
+                          : 0.5,
                     }}
                     className="rounded-2xl border border-black/10 bg-white/55 px-5 py-4"
                   >
@@ -579,63 +593,76 @@ function App() {
           </motion.div>
         </div>
       </section>
-          
-          <DanceDivider number={4} />
-          <section id="contact" className="px-6 py-28 lg:px-10">
-            <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#241720] px-8 py-16 text-white md:px-14 md:py-20">
-              <p className="text-sm tracking-[0.2em] text-white/45">
-                LET’S CONNECT
-              </p>
 
-              <h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
-                I’m always looking for problems worth{" "}
-                <span className="font-serif italic text-[#dca6bf]">
-                  thinking deeply about.
-                </span>
-              </h2>
+      <DanceDivider number={4} />
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/55">
-                Software, AI, healthcare, product ideas, research — or something
-                completely unexpected.
-              </p>
+      {/* CONTACT */}
+      <section id="contact" className="px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl rounded-[2.5rem] bg-[#241720] px-8 py-16 text-white md:px-14 md:py-20">
+          <p className="text-sm tracking-[0.2em] text-white/45">
+            LET’S CONNECT
+          </p>
 
-              <div className="mt-10 flex flex-wrap gap-5 text-sm">
-                <a href="mailto:eeshasutaria@gmail.com" className="underline underline-offset-4">
-                  Email
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/eesha-s-994a662a1"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/esutaria"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  GitHub
-                </a>
+          <h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">
+            I’m always looking for problems worth{" "}
+            <span className="font-serif italic text-[#dca6bf]">
+              thinking deeply about.
+            </span>
+          </h2>
 
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 transition hover:text-white/60"
-                >
-                  Resume ↗
-                </a>
-              </div>
-            </div>
-          </section>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/55">
+            Software, AI, healthcare, product ideas, research — or
+            something completely unexpected.
+          </p>
 
-          <footer className="px-6 py-10 text-center text-sm text-black/40">
-            Designed, built, and choreographed by Eesha Sutaria.
-          </footer>
-        </main>
-      )
-    }
+          <div className="mt-10 flex flex-wrap gap-6 text-sm">
+            <a
+              href="mailto:eeshasutaria@gmail.com"
+              className="underline underline-offset-4 transition hover:text-white/60"
+            >
+              Email ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/eesha-s-994a662a1"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 transition hover:text-white/60"
+            >
+              LinkedIn ↗
+            </a>
+
+            <a
+              href="https://github.com/esutaria"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 transition hover:text-white/60"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 transition hover:text-white/60"
+            >
+              Resume ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="px-6 py-10 text-center text-sm text-black/40">
+        Designed, built & choreographed by Eesha Sutaria.
+      </footer>
+    </main>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/* HERO DANCE / SKILLS                                                       */
+/* -------------------------------------------------------------------------- */
 
 function SignalGraphic() {
   const [activeStep, setActiveStep] = useState(0)
@@ -661,7 +688,7 @@ function SignalGraphic() {
       detail: "OpenCV · Gemini Vision",
     },
     {
-      title: "Healthcare Technology",
+      title: "Healthcare",
       detail: "Digital Health · Clinical Systems",
     },
     {
@@ -677,17 +704,13 @@ function SignalGraphic() {
 
     if (!video.duration) return
 
-    const progress = video.currentTime / video.duration
+    const progress =
+      video.currentTime / video.duration
 
-    // Hands are highest during the first part of the gesture
     if (progress < 0.34) {
       setActiveStep(0)
-
-    // Hands travel outward through the middle
     } else if (progress < 0.67) {
       setActiveStep(1)
-
-    // Hands finish at the lowest point
     } else {
       setActiveStep(2)
     }
@@ -695,14 +718,21 @@ function SignalGraphic() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.97 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
+      initial={{
+        opacity: 0,
+        scale: 0.97,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.8,
+      }}
       className="relative mx-auto w-full max-w-[760px]"
     >
       <div className="grid grid-cols-[1fr_0.9fr_1fr] items-center gap-3">
-
-        {/* LEFT SKILLS */}
+        {/* LEFT */}
         <div className="flex flex-col gap-12">
           {leftSkills.map((skill, index) => (
             <SkillCard
@@ -715,7 +745,7 @@ function SignalGraphic() {
           ))}
         </div>
 
-        {/* DANCER */}
+        {/* VIDEO */}
         <div className="relative z-10">
           <div className="relative overflow-hidden rounded-[3rem]">
             <video
@@ -724,14 +754,13 @@ function SignalGraphic() {
               muted
               loop
               playsInline
-              onLoadedMetadata={(e) => {
-                e.currentTarget.playbackRate = 0.58
+              onLoadedMetadata={(event) => {
+                event.currentTarget.playbackRate = 0.58
               }}
               onTimeUpdate={handleVideoTime}
               className="h-full w-full"
             />
 
-            {/* Blend the video gently into the portfolio */}
             <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#fbf7f2]/70 to-transparent" />
 
             <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#fbf7f2]/70 to-transparent" />
@@ -740,7 +769,7 @@ function SignalGraphic() {
           </div>
         </div>
 
-        {/* RIGHT SKILLS */}
+        {/* RIGHT */}
         <div className="flex flex-col gap-12">
           {rightSkills.map((skill, index) => (
             <SkillCard
@@ -754,20 +783,19 @@ function SignalGraphic() {
         </div>
       </div>
 
-      {/* Small personality line */}
-      <motion.div
-        className="mt-3 text-center"
-        animate={{ opacity: [0.55, 0.9, 0.55] }}
+      <motion.p
+        className="mt-3 text-center font-serif text-sm italic text-[#8a3158]/70"
+        animate={{
+          opacity: [0.55, 0.9, 0.55],
+        }}
         transition={{
           duration: 4,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       >
-        <p className="font-serif text-sm italic text-[#8a3158]/70">
-          engineering with rhythm, intention, and a little creativity
-        </p>
-      </motion.div>
+        engineering with rhythm, intention, and a little creativity
+      </motion.p>
     </motion.div>
   )
 }
@@ -788,12 +816,12 @@ function SkillCard({
   return (
     <motion.div
       animate={{
-        x: active
-          ? side === "left"
-            ? 10
-            : -10
-          : 0,
-
+        x:
+          active
+            ? side === "left"
+              ? 10
+              : -10
+            : 0,
         scale: active ? 1.055 : 1,
         opacity: active ? 1 : 0.48,
       }}
@@ -807,13 +835,14 @@ function SkillCard({
           : "border-black/10 bg-white/45"
       }`}
     >
-      {/* connector dot closest to dancer */}
       <motion.div
         animate={{
           scale: active ? 1.65 : 1,
           opacity: active ? 1 : 0.48,
         }}
-        transition={{ duration: 0.45 }}
+        transition={{
+          duration: 0.45,
+        }}
         className={`absolute top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#8a3158] ${
           side === "left"
             ? "-right-[6px]"
@@ -838,50 +867,78 @@ function SkillCard({
   )
 }
 
+/* -------------------------------------------------------------------------- */
+/* DANCE DIVIDERS                                                            */
+/* -------------------------------------------------------------------------- */
 
 type DanceDividerProps = {
   number: 1 | 2 | 3 | 4
 }
 
-function DanceDivider({ number }: DanceDividerProps) {
+function DanceDivider({
+  number,
+}: DanceDividerProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
+      initial={{
+        opacity: 0,
+        y: 6,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.4,
+      }}
       transition={{
-        duration: 0.9,
+        duration: 0.8,
         ease: "easeOut",
       }}
-      className="mx-auto max-w-7xl px-6 py-4 lg:px-10"
+      className="mx-auto max-w-5xl px-8 py-2"
     >
       <img
         src={`/dance-divider-${number}.png`}
         alt=""
         aria-hidden="true"
-        className="mx-auto h-auto w-full max-w-6xl object-contain"
+        className="mx-auto block w-full object-contain"
       />
     </motion.div>
   )
 }
 
-function SectionFlourish() {
+/* -------------------------------------------------------------------------- */
+/* SECTION LABEL                                                             */
+/* -------------------------------------------------------------------------- */
+
+function SectionLabel({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <motion.div
-      initial={{ width: 0 }}
-      whileInView={{ width: 72 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.9 }}
-      className="mt-3 flex items-center gap-1 overflow-hidden"
-    >
-      <div className="h-px w-8 bg-[#8a3158]/50" />
+    <div>
+      <p className="text-sm tracking-[0.2em] text-black/45">
+        {children}
+      </p>
 
-      <span className="font-serif text-sm text-[#8a3158]/60">
-        ✦
-      </span>
-
-      <div className="h-px w-6 bg-[#8a3158]/30" />
-    </motion.div>
+      <motion.div
+        initial={{
+          width: 0,
+        }}
+        whileInView={{
+          width: 58,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.8,
+        }}
+        className="mt-3 h-px bg-[#8a3158]/40"
+      />
+    </div>
   )
 }
 
