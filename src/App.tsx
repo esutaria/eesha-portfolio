@@ -14,6 +14,8 @@ const projects = [
     image: "/sarah-preview.png",
     link: "https://github.com/esutaria/SARAH",
     demo: "https://youtu.be/WMObGMByjl4",
+    github: "https://github.com/esutaria/SARAH",
+    demoLabel: "▶ Watch demo",
   },
   {
     number: "02",
@@ -21,12 +23,14 @@ const projects = [
     title: "SenseAI",
     headline: "Turning customer noise into product signal.",
     description:
-      "A Voice of Customer intelligence platform that transforms fragmented feedback into evidence-backed product insights.",
-    tags: ["Product", "AI", "NLP", "Full Stack"],
-    status: "Building",
-    image: null,
-    link: "#",
-    demo: null,
+      "An evidence-grounded Voice of Customer platform that clusters multi-source feedback into quantified pain points, traces every insight to source evidence, and recommends product opportunities.",
+    tags: ["Product", "AI", "FastAPI", "React"],
+    status: "Live",
+    image: "/sensai-preview.png",
+    link: "https://frontend-jet-omega-82.vercel.app/",
+    demo: "https://frontend-jet-omega-82.vercel.app/",
+    github: "https://github.com/esutaria/SenseAI",
+    demoLabel: "↗ Open live demo",
   },
   {
     number: "03",
@@ -40,6 +44,8 @@ const projects = [
     image: null,
     link: "#",
     demo: null,
+    github: null,
+    demoLabel: null,
   },
 ]
 
@@ -177,9 +183,7 @@ function App() {
               systems.
             </motion.p>
 
-            <p className="mt-4 font-serif text-lg italic text-[#8a3158]/75">
-              from perception to decisions.
-            </p>
+           
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -272,7 +276,7 @@ function App() {
                           rel="noreferrer"
                           className="absolute bottom-6 left-6 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#241720] transition hover:scale-105"
                         >
-                          ▶ Watch demo
+                          {project.demoLabel}
                         </a>
                       )}
                     </div>
@@ -320,20 +324,46 @@ function App() {
                       </div>
                     </div>
 
-                    {project.link === "#" ? (
-                      <p className="mt-10 text-sm font-medium text-black/40">
-                        Case study coming soon
-                      </p>
-                    ) : (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-10 inline-block text-sm font-medium transition hover:translate-x-1"
-                      >
-                        Explore project →
-                      </a>
-                    )}
+                    <div className="mt-10 flex flex-wrap items-center gap-5">
+                      {project.title === "SenseAI" && project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-full bg-[#241720] px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5"
+                        >
+                          Live demo ↗
+                        </a>
+                      )}
+
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-medium transition hover:translate-x-1 hover:text-[#8a3158]"
+                        >
+                          GitHub ↗
+                        </a>
+                      )}
+
+                      {project.title === "S.A.R.A.H." && project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-medium text-black/60 transition hover:translate-x-1 hover:text-[#8a3158]"
+                        >
+                          Watch demo ↗
+                        </a>
+                      )}
+
+                      {!project.github && !project.demo && (
+                        <p className="text-sm font-medium text-black/40">
+                          Case study coming soon
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -563,7 +593,7 @@ function App() {
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
-                  ["building", "SenseAI"],
+                  ["building", "AI products"],
                   ["learning", "ML systems"],
                   ["dancing", "Bharatanatyam"],
                   ["craving", "tiramisu"],
@@ -794,7 +824,7 @@ function SignalGraphic() {
           ease: "easeInOut",
         }}
       >
-        engineering with rhythm, intention, and a little creativity
+        Engineering with passion, intention, and creativity
       </motion.p>
     </motion.div>
   )
