@@ -15,6 +15,7 @@ const projects = [
     link: "https://github.com/esutaria/SARAH",
     demo: "https://youtu.be/WMObGMByjl4",
     github: "https://github.com/esutaria/SARAH",
+    prd:null,
     demoLabel: "▶ Watch demo",
   },
   {
@@ -30,6 +31,7 @@ const projects = [
     link: "https://frontend-jet-omega-82.vercel.app/",
     demo: "https://frontend-jet-omega-82.vercel.app/",
     github: "https://github.com/esutaria/SenseAI",
+    prd: "https://github.com/esutaria/SenseAI/blob/main/Product%20Requirements%20Document.md",
     demoLabel: "↗ Open live demo",
   },
   {
@@ -45,6 +47,7 @@ const projects = [
     link: "#",
     demo: null,
     github: null,
+    prd: null,
     demoLabel: null,
   },
 ]
@@ -344,6 +347,17 @@ function App() {
                           className="text-sm font-medium transition hover:translate-x-1 hover:text-[#8a3158]"
                         >
                           GitHub ↗
+                        </a>
+                      )}
+
+                      {project.prd && (
+                        <a
+                          href={project.prd}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-medium text-black/60 transition hover:text-[#8a3158]"
+                        >
+                          PRD ↗
                         </a>
                       )}
 
