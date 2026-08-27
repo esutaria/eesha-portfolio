@@ -609,8 +609,8 @@ function App() {
                 {[
                   ["building", "AI products"],
                   ["learning", "ML systems"],
+                  ["improving", "Research projects"],
                   ["dancing", "Bharatanatyam"],
-                  ["craving", "tiramisu"],
                 ].map(([label, value], index) => (
                   <motion.div
                     key={label}
