@@ -35,21 +35,21 @@ const projects = [
     demoLabel: "↗ Open live demo",
   },
   {
-  number: "03",
-  label: "DIGITAL HEALTH & SERVICE DESIGN",
-  title: "Western Cape Clinic Platform",
-  headline: "Turning fragmented clinic workflows into one usable system.",
-  description:
-    "A multi-clinic patient management platform I designed and built for public optometry clinics in South Africa, translating real operational pain points into streamlined registration, booking, attendance, follow-up, eligibility, and reporting workflows.",
-  tags: ["Digital Health", "Service Design", "Power Apps", "SharePoint"],
-  status: "Completed",
-  image: "/western-cape-preview.png",
-  link: "https://youtu.be/qxAucLYMrbI",
-  demo: "https://youtu.be/qxAucLYMrbI",
-  github: null,
-  prd: null,
-  poster: "/western-cape-poster.png",
-  demoLabel: "▶ Watch product walkthrough",
+    number: "03",
+    label: "DIGITAL HEALTH & SERVICE DESIGN",
+    title: "Western Cape Clinic Platform",
+    headline: "Turning fragmented clinic workflows into one usable system.",
+    description:
+      "A multi-clinic patient management platform I designed and built for public optometry clinics in South Africa, translating real operational pain points into streamlined registration, booking, attendance, follow-up, eligibility, and reporting workflows.",
+    tags: ["Digital Health", "Service Design", "Power Apps", "SharePoint"],
+    status: "Completed",
+    image: "/western-cape-preview.png",
+    link: "https://youtu.be/qxAucLYMrbI",
+    demo: "https://youtu.be/qxAucLYMrbI",
+    github: null,
+    prd: null,
+    poster: "/western-cape-poster.png",
+    demoLabel: "▶ Watch product walkthrough",
 },
   {
     number: "04",
@@ -345,56 +345,59 @@ function App() {
                     </div>
 
                     <div className="mt-10 flex flex-wrap items-center gap-5">
-                      {project.title === "SenseAI" && project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="rounded-full bg-[#241720] px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5"
-                        >
-                          Live demo ↗
-                        </a>
-                      )}
+  {project.demo && (
+    <a
+      href={project.demo}
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-full bg-[#241720] px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5"
+    >
+      Demo
+    </a>
+  )}
 
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sm font-medium transition hover:translate-x-1 hover:text-[#8a3158]"
-                        >
-                          GitHub ↗
-                        </a>
-                      )}
+  {project.poster && (
+    <a
+      href={project.poster}
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-[#241720] transition hover:bg-[#f3ede7]"
+    >
+      Poster
+    </a>
+  )}
 
-                      {project.prd && (
-                        <a
-                          href={project.prd}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sm font-medium text-black/60 transition hover:text-[#8a3158]"
-                        >
-                          PRD ↗
-                        </a>
-                      )}
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noreferrer"
+      className="text-sm font-medium transition hover:translate-x-1 hover:text-[#8a3158]"
+    >
+      GitHub ↗
+    </a>
+  )}
 
-                      {project.title === "S.A.R.A.H." && project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sm font-medium text-black/60 transition hover:translate-x-1 hover:text-[#8a3158]"
-                        >
-                          Watch demo ↗
-                        </a>
-                      )}
+  {project.prd && (
+    <a
+      href={project.prd}
+      target="_blank"
+      rel="noreferrer"
+      className="text-sm font-medium text-black/60 transition hover:text-[#8a3158]"
+    >
+      PRD ↗
+    </a>
+  )}
 
-                      {!project.github && !project.demo && (
-                        <p className="text-sm font-medium text-black/40">
-                          Case study coming soon
-                        </p>
-                      )}
-                    </div>
+  {!project.demo &&
+    !project.poster &&
+    !project.github &&
+    !project.prd && (
+      <p className="text-sm font-medium text-black/40">
+        Case study coming soon
+      </p>
+    )}
+</div>
                   </div>
                 </div>
               </motion.div>
