@@ -48,7 +48,7 @@ const projects = [
   demo: "https://youtu.be/qxAucLYMrbI",
   github: null,
   prd: null,
-  poster: "/western-cape-poster.pdf",
+  poster: "/western-cape-poster.png",
   demoLabel: "▶ Watch product walkthrough",
 },
   {
