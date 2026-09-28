@@ -813,7 +813,7 @@ function SignalGraphic() {
         <div className="relative z-10">
           <div className="relative overflow-hidden rounded-[3rem]">
             <video
-              src="/dance-skills.mp4"
+              src="/public/IMG_2885 (1).MOV"
               autoPlay
               muted
               loop
